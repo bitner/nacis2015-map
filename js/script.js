@@ -39,10 +39,34 @@ var restaurantPin = L.MakiMarkers.icon({
     size: "m"
 });
 
-var coffeePin = L.MakiMarkers.icon({
+var cafePin = L.MakiMarkers.icon({
     icon: "cafe",
     color: "#23344c",
     size: "m"
+});
+
+var hotelPin = L.MakiMarkers.icon({
+	icon: "lodging",
+	color: "#2a6496",
+	size: "m"
+});
+
+var airportPin = L.MakiMarkers.icon({
+	icon: "airport",
+	color: "#2a6496",
+	size: "m"
+});
+
+var icecreamPin = L.MakiMarkers.icon({
+	icon: "ice-cream",
+	color: "#2a6496",
+	size: "m"
+});
+
+var museumPin = L.MakiMarkers.icon({
+	icon: "museum",
+	color: "#2a6496",
+	size: "m"
 });
 
 var tapLayer = new L.GeoJSON.AJAX("js/places.geojson",{
@@ -80,6 +104,18 @@ var tapLayer = new L.GeoJSON.AJAX("js/places.geojson",{
       if (feature.properties.poi_type === 'cafe') {
           marker.setIcon(cafePin);
          }
+      if (feature.properties.poi_type === 'hotel') {
+          marker.setIcon(hotelPin);
+         }
+      if (feature.properties.poi_type === 'airport') {
+          marker.setIcon(airportPin);
+         }
+			if (feature.properties.poi_type === 'ice-cream') {
+				 	marker.setIcon(icecreamPin);
+				 }
+			if (feature.properties.poi_type === 'museum') {
+	 				marker.setIcon(museumPin);
+	 				 }
 
       //marker.setIcon(beerPin);
 		  marker.bindPopup(popup);
